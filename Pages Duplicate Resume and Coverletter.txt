@@ -1,0 +1,67 @@
+on findDocByName(docName)
+	tell application "Pages"
+		repeat with doc in documents
+			if name of doc is docName then
+				return doc
+			end if
+		end repeat
+	end tell
+	return ""
+end findDocByName
+
+display dialog "Enter new folder name for job apps" with title "Enter new folder name" default answer ""
+set companyName to text returned of the result
+
+########
+# These are the variables you need to customize
+# Where the new docs should go to
+set newDocLocation to "Macintosh HD:Users:nealsid:Library:Mobile Documents:com~apple~CloudDocs:job apps:" & companyName & ":"
+# The title of the coverletter document
+set coverletterName to "Neal Sidhwaney Coverletter"
+# The title of the resume document
+set resumeName to "Neal Sidhwaney Resume"
+#########
+
+set coverletterFilename to coverletterName & ".pages"
+set resumeFilename to resumeName & ".pages"
+
+tell application "Finder"
+	set loc to folder "job apps" of folder "com~apple~CloudDocs" of folder "Mobile Documents" of folder "Library" of folder "nealsid" of folder "Users" of startup disk
+	make new folder at loc with properties {name:companyName}
+end tell
+
+tell application "System Events"
+	tell process "Pages"
+		set frontmost to true
+		click menu item coverletterName of menu "Window" of menu bar 0
+		click menu item "Duplicate" of menu "File" of menu bar 0
+	end tell
+end tell
+delay 0.25
+
+set cvr to findDocByName(coverletterName)
+tell application "Pages" to close cvr
+
+set cvrDup to findDocByName(coverletterName & " copy")
+tell application "Pages"
+	set cvrLoc to newDocLocation & coverletterName
+	save cvrDup in file cvrLoc
+end tell
+
+tell application "System Events"
+	tell process "Pages"
+		set frontmost to true
+		click menu item resumeName of menu "Window" of menu bar 0
+		click menu item "Duplicate" of menu "File" of menu bar 0
+	end tell
+end tell
+delay 0.25
+
+set res to findDocByName(resumeName)
+tell application "Pages" to close res
+
+set resDup to findDocByName(resumeName & " copy")
+tell application "Pages"
+	set resLoc to newDocLocation & resumeName
+	save resDup in file resLoc
+end tell
