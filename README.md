@@ -1,6 +1,10 @@
 # AppleScripts
 Apple Scripts I've written to help automate repetitive tasks.  This stuff was written in a hurry and most likely needs some updating.
 
+# Reduce Twitter UI
+
+![Reduce Twitter UI](ReduceTwitter.png)
+
 # Show/hide Xcode Navigator, Debug Area, and Inspector 
 
 This is so I can bind one hotkey to run the AppleScript to show/hide all 3 side windows in Xcode at once instead of using one hot key for each window.
