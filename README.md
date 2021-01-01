@@ -3,6 +3,19 @@ Apple Scripts I've written to help automate repetitive tasks.  This stuff was wr
 
 # Reduce Twitter UI
 
+Inject JS into Twitter that removes extra UI elements, such as:
+- "What's happening" and "Who to follow"
+- People's liked tweets
+- People receiving a reply
+- Promoted tweets
+- The LHS menu
+
+Note that it's buggy in that Twitter seems to detect these modifications and blanks the page shortly afterwards, but this is a W.I.P.  Also I plan to make the LHS menu reappear on hover.
+
+I had some trouble getting this to execute as a Safari extension after page load finished, so I had to do it as a manually executed AppleScript for now, but it should be easy to change later.
+
+Future plans: blur pictures unless mouse moves over them, add some more vertical space, etc.
+
 ![Reduce Twitter UI](ReduceTwitterMovie.gif)
 
 # Show/hide Xcode Navigator, Debug Area, and Inspector 
