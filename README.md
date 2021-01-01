@@ -3,7 +3,7 @@ Apple Scripts I've written to help automate repetitive tasks.  This stuff was wr
 
 # Reduce Twitter UI
 
-![Reduce Twitter UI](ReducedTwitter.png)
+![Reduce Twitter UI](ReducedTwitterMovie.gif)
 
 # Show/hide Xcode Navigator, Debug Area, and Inspector 
 
