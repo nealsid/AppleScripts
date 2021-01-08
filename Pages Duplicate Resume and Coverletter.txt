@@ -44,7 +44,7 @@ tell application "Pages" to close cvr
 
 set cvrDup to findDocByName(coverletterName & " copy")
 tell application "Pages"
-	set cvrLoc to newDocLocation & coverletterName
+	set cvrLoc to newDocLocation & coverletterFilename
 	save cvrDup in file cvrLoc
 end tell
 
@@ -62,6 +62,6 @@ tell application "Pages" to close res
 
 set resDup to findDocByName(resumeName & " copy")
 tell application "Pages"
-	set resLoc to newDocLocation & resumeName
+	set resLoc to newDocLocation & resumeFilename
 	save resDup in file resLoc
 end tell
